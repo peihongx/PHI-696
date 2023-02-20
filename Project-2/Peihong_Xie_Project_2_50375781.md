@@ -277,7 +277,11 @@ However, if we deal with linear roles or small datasets, TMP might not be very u
 
 Answer:
 
-![picture 1](c_overlaps_a_1.PNG) 
+![picture 1](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_1_1.PNG) 
+
+![picture 1](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_1_2.PNG)
+
+![picture 1](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_1_3.PNG)
 
 The tableau algorithm generates this inference (c,a):O in such a way:
 
@@ -303,8 +307,8 @@ Provide a screenshot of your results here.
 
 Answers:
 
-![picture 2](pic_4.PNG) 
+![picture 2](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_2_1.PNG) 
 
-![picture 3](pic_2.PNG) 
+![picture 3](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_2_2.PNG) 
 
-![picture 4](pic_3.PNG) 
+![picture 4](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_2_3.PNG) 
