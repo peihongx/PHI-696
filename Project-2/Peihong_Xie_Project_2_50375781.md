@@ -36,7 +36,7 @@ Answer:
 
 K = (T,A) such that
 
-T={$PP ≡ P\sqcap ¬P^-$,
+T={PP ≡ P ⊔ ¬P<sup>-</sup>,
 
 $iPP ≡ P^-\sqcap ¬P$,
 
