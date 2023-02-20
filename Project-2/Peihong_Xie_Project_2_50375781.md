@@ -283,6 +283,7 @@ Answer:
 
 ![picture 1](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_1_3.PNG)
 
+
 The tableau algorithm generates this inference (c,a):O in such a way:
 
 From Theorem 2.17 (Baader.etc: 32), we have $(\emptyset,A)\models(c,a):O$ iff ($\emptyset,A\cup$ {(c,a):¬O}) _is_ not consistent. Here A={(c,a):P,(c,b):O}.
