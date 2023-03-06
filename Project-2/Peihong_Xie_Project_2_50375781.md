@@ -308,8 +308,8 @@ Provide a screenshot of your results here.
 
 Answers:
 
-![picture 2](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_2_1.PNG) 
+![picture 2](https://github.com/peihongx/PHI-696/blob/Peihong_Karl_proj_3/Project-2/pic_2_1.PNG) 
 
-![picture 3](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_2_2.PNG) 
+![picture 3](https://github.com/peihongx/PHI-696/blob/Peihong_Karl_proj_3/Project-2/pic_2_2.PNG) 
 
-![picture 4](https://github.com/peihongx/PHI-696/blob/main/Project-2/pic_2_3.PNG) 
+![picture 4](https://github.com/peihongx/PHI-696/blob/Peihong_Karl_proj_3/Project-2/pic_2_3.PNG) 
