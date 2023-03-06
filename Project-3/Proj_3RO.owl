@@ -13209,7 +13209,7 @@ For example, protein A (transcription factor) indirectly increases by expression
     <!-- http://purl.obolibrary.org/obo/bfo.owl#minivan_trunk -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/bfo.owl#minivan_trunk">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
         <dc:creator>karlx</dc:creator>
         <rdfs:label xml:lang="en">minivan trunk</rdfs:label>
     </owl:Class>

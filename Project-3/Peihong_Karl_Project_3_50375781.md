@@ -17,13 +17,13 @@ For any question involving the use of Protege, please be sure to import Basic Fo
 
 **Answer:**
 
-(a) The object property **"aligned with"** should be reflexive, though it is not listed as so. For example, a state border can be aligned with itself.
+(a) Object properties **"simultaneous with", "has part", "part of", "overlaps" and so on** should be reflexive, though it is not listed as so. For example, an event can be simultaneous with itself; also, an entity has_part, part_of, or overlaps itself because it is equivalent to itself.
 
 (b) The object property **"determined by"** should be transitive, though it is not listed as so. That is, if A is determined by B, and B is determined by C, then A should be determined by C. For example, a small-size ecological cycle is determined by a biological host, say, a human being, that is, as a system at another level of granularity, is determined by his brain. In this case, we can say that the ecological cycle is determined by the human being's brain because its proper functioning leads the human to make efforts in maintaining that cycle. 
 
 (c) The object property **"biotically interacts with"** should be symmetric, though it is not listed as so. If an organism A biotically interacts with another organism B, then it is clear that B is also biotically interacts with A. 
 
-Similarly, **"participates in a biotic-biotic interaction with", "ecologically co-occurs with"** and so on should also be symmetric.
+Similarly, **"participates in a biotic-biotic interaction with", "ecologically co-occurs with", "partially overlap" and so on** should also be symmetric.
 
 (d) The object property **"has skeleton"** should be functional, though it is not listed as so. According to its definition, "has skeleton" is a relation between a segment or subdivision of an organism and the maximal subdivision of material entities that provides structural support for that segment or subdivision. Given that the maximal subdivision of material entities for any organism has only one, this object property is thereby functional.
 
@@ -44,9 +44,9 @@ Similarly, **"spatially coextensive with" and "simultaneous with"** is also symm
 
 (a) Although **"has substance added"** is listed as irreflexive, but it should not be so. That is, in some cases, a physical entity can have itself as substance added to it. For example, a portion of water can be added to itself at some time. Similarly, **"has substance removed"** should not be irreflexive, either because we can always remove the same amount of water from itself.
 
-(b) Although **"end after"** is listed as transitive, but it should not be so. A possible counterexample can be found in a spacetime circle: The event of Jack's killing his grandfather ends after the event of his shooting, and the latter ends after the event of his returning to the past. However, the event of Jack's killing his grandfather does not end after the event of his returning to the past. (paradox of time travel)
+(b) Although **"aligned with"** is listed as transitive, but it should not be so. Suppose that we have three different quadrilateral objects A, B, and C. A is aligned with B because of their alighed long sides, and B is aligned with C because of their aligned short sides, but A is not thus aligned with C because neither their long nor short sides are not aligned with each other.
 
-Similarly, **"before"** should not be transitive, either.
+Another funny example: Although **"end after"** is listed as transitive, but it should not be so. A possible counterexample can be found in a spacetime circle: The event of Jack's killing his grandfather ends after the event of his shooting, and the latter ends after the event of his returning to the past. However, the event of Jack's killing his grandfather does not end after the event of his returning to the past. Similarly, **"before"** should not be transitive, either. *(paradox of time travel)*
 
 (c) Although **"has role in modeling" (or "is used to study")** is listed as asymmetric, but it should not be so. Suppose we wanna study the relation between a biological organism, say, a dog, and its biological niche. Given the mutual dependence between them in some plausible sense, it seems that the dog has role in modeling its niche, but its niche has also role in modeling it.
 
@@ -64,13 +64,55 @@ Similarly, **"before"** should not be transitive, either.
 
 **Answer:**
 
-(a) Sally (individual) has_part some Arm (class) at t<sub>1</sub> and t<sub>1</sub> is simultaneous_with Tuesday, but it is not the case that Sally has_part some Arm at t<sub>2</sub> and t<sub>2</sub> is simultaneous_with Wednesday.
+(a) Sally instance_of Object
 
-(b) Liver (class) has_part_at_all_times some Cell (class).
+Arm is_a Fiat object part
 
-(c) The childhood of John inheres_in John at t<sub>1</sub>, and the adulthood of John inheres_in John at t<sub>2</sub>, and the seniorhood of John inheres_in John at t<sub>3</sub>, and t<sub>3</sub> preceded_by t<sub>2</sub>, and t<sub>2</sub> preceded_by t<sub>1</sub>
+Tuesday/Wednesday is_a One-dimensional temporal region
 
-(d) t part_of this Three-year so that: Goofus (individual) participates_in this Marriage (process) at all t, and Gallant also participates_in this Marriage (process) at all t.
+"having some Arm on some Tuesday" instance_of occurrent
+
+"having no Arm on some Wednesday" instance_of occurrent
+
+**Result**: "Sally participates in having some Arm on some Tuesday" precedes "Sally participates in having no Arm on some Wednesday".
+
+Note: "Sally does not have an arm" is ambiguous because it can also be read as "Sally loses an arm but has still other arms" (Maybe Sally is an octopus).
+
+(b) Liver is_a fiat object part
+
+Cell is_a material entity
+
+**Result**: Liver has_part_at_all_times Cell.
+
+(c) Childhood is_a Occurrent
+
+John's childhood instance_of Childhood
+
+Adulthood is_a Occurrent
+
+John's adulthood instance_of Adulthood
+
+Seniorhood is_a Occurrent
+
+John's seniorhood instance_of Seniorhood
+
+John instance_of Object
+
+**Result**: John participates_in John's childhood, and John participates_in John's adulthood, and John participates_in John's seniorhood, and John's childhood precedes John's adulthood, and John's adulthood precedes John's seniorhood.
+
+(d) t instance_of Zero-dimensional temporal region
+
+"This three years" instance_of One-dimensional temporal region
+
+Goofus instance_of Object
+
+Gallant instance_of Object
+
+Marriage is_a Occurrent
+
+**Result**: If any t part_of this three years, then Goofus participates_in some Marriage at t, and Gallant also participates_in some Marriage t.
+
+Note: Goofus and Gallant might not be a couple.
 
 **[4]** Using the language of First-Order Logic, represent the following natural language expressions; you are welcome to introduce new terms where needed: 
 ```
@@ -88,13 +130,13 @@ Has(x,y,t) : x has y at time t
 
 Arm (x) : x is an arm
 
+T(t) : t is a Tuesday 
+
+W(t) : t is a Wednesday
+
 **s** : Sally
 
-**t<sub>0</sub>** : Tuesday
-
-**t<sub>1</sub>** : Wednesday
-
-So the sentence (a) is symbolized as: **∃x(Has(s,x,t<sub>0</sub>) ∧ Arm(x)) ∧ ¬∃x(Has(s,x,t<sub>1</sub>) ∧ Arm(x))**
+So the sentence (a) is symbolized as: **∃t∃x(Has(s,x,t) ∧ Arm(x) ∧ T(t)) ∧ ∃t∀x(W(t) ∧ (Arm (x) → ~Has(s,x,t)))**
 
 (b) Use the following key:
 
@@ -116,43 +158,67 @@ A(x,t) : x is an adult at time t
 
 S(x,t) : x is a senior at time t
 
-R(t,t<sup>'</sup>): the time t is wholly earlier than the time t<sup>'</sup>
+E(t,t<sup>'</sup>): the time t is wholly earlier than the time t<sup>'</sup>
 
 **b** : John
 
-So the sentence (c) is symbolized as: **∃t∃t<sup>'</sup>∃t<sup>''</sup>(C(b,t) ∧ A(b,t<sup>'</sup>) ∧ S(b,t<sup>''</sup>) ∧ R(t,t<sup>'</sup>) ∧ R(t<sup>'</sup>,t<sup>''</sup>))** 
+So the sentence (c) is symbolized as: **∃t∃t<sup>'</sup>∃t<sup>''</sup>(C(b,t) ∧ A(b,t<sup>'</sup>) ∧ S(b,t<sup>''</sup>) ∧ E(t,t<sup>'</sup>) ∧ E(t<sup>'</sup>,t<sup>''</sup>))** 
 
 (d)  Goofus and Gallant have been married for three years; for each day of that span, it is true to assert they are married.
 
 Use the following key:
 
-ST(x) : x is a span of three years
+ST(t) : t belongs to this three-year span
 
-R(x,y) : the time x is wholly earlier than the time y
+E(x,y) : the time x is wholly earlier than the time y
 
-D(x,y) : x is a day during a period y 
+D(t) : t is a day
 
-M (x,y,t) : x and y keep married at time t
+M (x,t) : x is married at time t
 
 **a** : Goofus
 
 **b** : Gallant
 
-**c** : the present time
-
-So the sentence (d) is symbolized as: **∃x(ST(x) ∧ D(x,c) ∧ M(a,b,x) ∧ ∀y(D(y,x) → M(a,b,y)))**
+So the sentence (d) is symbolized as: **∀t(D(t) ∧ ST(t) → M(a,t) ∧ M(b,t))**
 
 **[5]** Using BFO and RO, model the following scenario: the content of an rdf file is represented in two serializations - one in Turtle, one in XML - which are sent from one computer to two distinct computers on the same network.   
 
 **Answer:**
 
+```mermaid
+graph LR
+A(RDF File Content) -->|is_a|B(Generically Dependent Continuant)
+D(Turtle seriaization) -->|is_a|B(Generically Dependent Continuant)
+E(XML seriaization) -->|is_a|B(Generically Dependent Continuant)
+A(RDF File Content) -->|has_model|D(Turtle seriaization)
+A(RDF File Content) -->|has_model|E(XML seriaization)
+F(Network) -->|is_a|G(Object Aggregate)
+H(Computer) -->|is_a|I(Object)
+J(computer 1) -->|instance_of|H(Computer)
+K(computer 2) -->|instance_of|H(Computer)
+L(computer 3) -->|instance_of|H(Computer)
+H(Computer) -->|part_of|F(Network)
+H(Computer) -->|is_carrier_of|A(RDF File Content)
+H(Computer) -->|is_carrier_of|D(Turtle seriaization)
+H(Computer) -->|is_carrier_of|E(XML seriaization)
+J(computer 1) -->|enables|M(Data Transmission)
+M(Data Transmission) -->|ends_with|N(Data Reception)
+K(computer 2) -->|participates_in|N(Data Reception)
+L(computer 3) -->|participates_in|N(Data Reception)
+O(network I) -->|instance_of|F(Network)
+J(computer 1) -->|part_of|O(network I)
+K(computer 2) -->|part_of|O(network I)
+L(computer 3) -->|part_of|O(network I)
+```
 
+This graph represents the following key relations:
 
+– RDF File Content, Turtle and XML are all generically dependent continuants. RDF File Content *has_model* in Turtle and XML. And they are all *carried by* Computer.
 
+– Computer 1 *enables* the process of Data Transmission, which *ends_with* another process, Data Reception, which has computers 2 and 3 as *participants*. So this part is intended to show that there is some data (Turtle and XML) which are sent from Computers 1 and 2 to Computer 3.
 
-
-
-
+– Finally, computers 1, 2, and 3 are all *parts_of* network I, which is *instance_of* Object Aggregate.
 
 **[6]** Using Protege, place these in the BFO hierarchy where you think they fit best:
 ```
@@ -208,15 +274,48 @@ So the sentence (d) is symbolized as: **∃x(ST(x) ∧ D(x,c) ∧ M(a,b,x) ∧ �
 
 **Answer:**
 
+```mermaid
+graph LR
+A(John) -->|instance_of|B(Object)
+C(Running) -->|is_a|D(Process)
+E(John's Running) -->|instance_of|C(Running)
+A(John) -->|participates_in|E(John's Running)
+E(John's Running) -->|starts_with|F(John's Beginning Stage)
+E(John's Running) -->|starts_with|G(John's Final Stage)
+E(John's Running) -->|has_part|H(John's Middle Stage)
+F(John's Beginning Stage)-->|precedes|H(John's Middle Stage)
+H(John's Middle Stage)-->|precedes|G(John's Final Stage)
+F(John's Beginning Stage) -->|is_a|D(Process)
+H(John's Middle Stage) -->|is_a|D(Process)
+G(John's Final Stage) -->|is_a|D(Process)
+E(John's Running) -->|occurs_in|I(this 3 hours)
+I(this 3 hours)-->|instance_of|J(1-D Temporal region)
+K(Speed) --> |is_a|L(Disposition)
+C(Running) --> |realizes|K(Speed)
+M(John's Speed 1) -->|instance_of|K(Speed)
+N(John's Speed 2) -->|instance_of|K(Speed)
+O(John's Speed 3) -->|instance_of|K(Speed)
+F(John's Beginning Stage) -->|realizes|M(John's Speed 1)
+H(John's Middle Stage) -->|realizes|N(John's Speed 2)
+G(John's Final Stage) -->|realizes|O(John's Speed 3)
+A(John) -->|bears|M(John's Speed 1)
+A(John) -->|bears|N(John's Speed 2)
+A(John) -->|bears|O(John's Speed 3)
+M(John's Speed 1) -->|decreased_in_magnitude_relative_to|N(John's Speed 2)
+N(John's Speed 2) -->|increased_in_magnitude_relative_to|O(John's Speed 3)
+```
 
+ This is a graph based on Mermaid, representing the following relations:
 
+– John (as an Object) *participates_in* John’s running (as a process), and John *bears* John’s speeds 1, 2, and 3, all of which are instances of *dispositions*.
 
+–  John’s running includes 3 *temporal parts*: John’s beginning stage, John’s middle stage, and John’s final stage, each of which is a process. Besides, John’s beginning stage *precedes* John’s middle stage which *precedes* John’s final stage.
 
+– A process *realizes* one’s disposition. So John’s beginning stage realizes John’s speed 1, John’s middle stage realizes John’s speed 2, and John’s final stage realizes John’s speed 3.
 
+– Change in John’s speed: John's Speed is *decreased_in_magnitude_relative_to* John's Speed 2 (that is, speed 1＜speed 2), and John's Speed 2 is *increased_in_magnitude_relative_to* John's Speed 3 (that is, speed 2＞speed 3)
 
-
-
-
+– John’s running occurs in *this 3-hour*, which is instance_of one-dimensional temporal region.
 
 **[9]** The Pellet reasoner in Protege can be used in an incremental reasoning strategy. ELI5 when and why one should use Pellet for incremental reasoning. 
 
@@ -245,13 +344,13 @@ So if you have a very large set of data or ontology, and the data set or ontolog
 
 **Note**: In the above table, there are 21 different sorts of possibilities in total. We use "Yes" to represent a case where a pair of object property characteristics can be combined, and "No" to represent a case where a pair of object property characteristics cannot be combined.
 
-As a result, we find that there are 7 sorts of case where a pair of object property characteristics cannot be combined: 
+As a result, we find that there are 7 sorts of cases where a pair of object property characteristics cannot be combined: 
 
 (1) The following 3 pairs cannot be combined because of a logical contradiction:
 
 *Asymmetric & Reflexive, Asymmetric & Symmetric, and Reflexive-Irreflexive.*
 
-(2) The following 4 pairs cannot be combined because of a more subtle factor. That is, an assertion of transitivity leads to a result that the target object property becomes **non-simple** (see Baader's book: section 8.1, page 211), so it is beyond the power limit of the reasoner:
+(2) The following 4 pairs cannot be combined because of a more subtle factor. That is, an assertion of transitivity leads to a result that the target object property becomes **non-simple** (see Baader's book: section 8.1, page 211), so it is beyond the capacity limit of the reasoner:
 
 *Transitive & Functional, Transitive & Inverse Functional, Transitive & Asymmetric, and Transitive & Irreflexive.*
 
